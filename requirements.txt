@@ -1,6 +1,10 @@
 flask
-gunicorn
-requests
 pandas
 numpy
+requests
 websocket-client
+redis
+gunicorn
+upstash-redis
+python-dotenv
+flask-cors
