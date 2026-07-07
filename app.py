@@ -6,7 +6,10 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-CORS(app)
+CORS(
+    app,
+    resources={r"/*": {"origins": "*"}}
+)
 
 REST_URL = os.environ.get("UPSTASH_REDIS_REST_URL")
 REST_TOKEN = os.environ.get("UPSTASH_REDIS_REST_TOKEN")

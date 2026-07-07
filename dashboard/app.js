@@ -10,6 +10,7 @@ async function loadData() {
         );
 
         const json = await response.json();
+        console.log(json);
 
         // ================= BTC =================
 
