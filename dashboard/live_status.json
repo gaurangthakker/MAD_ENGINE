@@ -1,12 +1,12 @@
 {
     "BTCUSDT": {
         "symbol": "BTCUSDT",
-        "ltp": 64374.0,
-        "time": "2026-07-07 03:42:00",
-        "price": 64370.33,
-        "ema25": 64345.94,
-        "alma10": 64334.58,
-        "mad_fl": 17,
+        "ltp": 63366.54,
+        "time": "2026-07-07 15:53:00",
+        "price": 63365.39,
+        "ema25": 63371.37,
+        "alma10": 63378.09,
+        "mad_fl": 35,
         "bb_score": 1,
         "score": 1,
         "final_score": 1,
@@ -14,15 +14,15 @@
     },
     "ETHUSDT": {
         "symbol": "ETHUSDT",
-        "ltp": 1814.37,
-        "time": "2026-07-07 03:42:00",
-        "price": 1814.0,
-        "ema25": 1813.89,
-        "alma10": 1813.14,
-        "mad_fl": -23,
-        "bb_score": -1,
-        "score": -1,
-        "final_score": -1,
-        "signal": "SELL"
+        "ltp": 1780.94,
+        "time": "2026-07-07 15:53:00",
+        "price": 1781.06,
+        "ema25": 1780.88,
+        "alma10": 1781.24,
+        "mad_fl": 35,
+        "bb_score": 1,
+        "score": 1,
+        "final_score": 1,
+        "signal": "BUY"
     }
 }
