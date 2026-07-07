@@ -3,10 +3,14 @@ async function loadData() {
     try {
 
         const response = await fetch(
-            "live_status.json?" + new Date().getTime()
+        "https://mad-engine.onrender.com/api/live?t=" + Date.now(),
+            {
+                cache: "no-store"
+            }
         );
 
         const json = await response.json();
+        console.log(json);
 
         // ================= BTC =================
 
