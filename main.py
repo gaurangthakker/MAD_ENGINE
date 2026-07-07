@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 from system import system
 from config import *
-from signal import generate_signal,generate_bb_signal,generate_combined_signal
+from signal_engine import generate_signal,generate_bb_signal,generate_combined_signal
 from trade_logger import create_trade_log
 from analytics import generate_summary
 from report import create_html_report

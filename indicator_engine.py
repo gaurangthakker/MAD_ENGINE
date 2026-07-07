@@ -1,7 +1,7 @@
 from moving_average import ema, alma
 from mad import mad
 from system import system
-from signal import (
+from signal_engine import (
     generate_signal,
     generate_bb_signal,
     generate_combined_signal,
