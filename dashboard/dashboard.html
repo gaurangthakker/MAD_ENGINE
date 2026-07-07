@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MAD ENGINE BY GAURANG</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="header">
+
+    <div class="title-box">
+
+        <h1>MAD ENGINE</h1>
+
+        <div class="subtitle">
+            LIVE SIGNAL INDICATOR • BY GAURANG THAKKER
+        </div>
+
+    </div>
+
+    <div class="status">
+
+        <span class="led"></span>
+
+        <span>LIVE</span>
+
+        <span id="time"></span>
+
+    </div>
+
+</div>
+
+    <div class="container">
+
+        <!-- ================= BTC ================= -->
+
+        <div class="card">
+
+            <h2 class="coin-title">
+                <img class="coin-logo"
+                src="https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/128/color/btc.png"
+                alt="BTC">
+                <span id="symbol">BTCUSDT</span>
+            </h2>
+
+            <div class="price" id="price">0.00</div>
+
+            <div id="signal" class="signal">WAIT</div>
+
+            <div class="stats-grid">
+
+    <div class="stat">
+        <span>EMA25</span>
+        <b id="ema"></b>
+    </div>
+
+    <div class="stat">
+        <span>ALMA10</span>
+        <b id="alma"></b>
+    </div>
+
+    <div class="stat">
+        <span>MAD_FL</span>
+        <b id="mad"></b>
+    </div>
+
+    <div class="stat">
+        <span>BB_SCORE</span>
+        <b id="bb"></b>
+    </div>
+
+    <div class="stat">
+        <span>SCORE</span>
+        <b id="score"></b>
+    </div>
+
+    <div class="stat">
+        <span>FINAL_SCORE</span>
+        <b id="final"></b>
+    </div>
+
+</div>
+
+<div class="last-update">
+
+    Last Update :
+    <span id="update"></span>
+
+</div>
+
+        </div>
+
+        <!-- ================= ETH ================= -->
+
+        <div class="card">
+
+            <h2 class="coin-title">
+                <img class="coin-logo"
+                src="https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/128/color/eth.png"
+                alt="ETH">
+                <span id="symbol2">ETHUSDT</span>
+            </h2>
+
+            <div class="price" id="price2">0.00</div>
+
+            <div id="signal2" class="signal">WAIT</div>
+
+            <div class="stats-grid">
+
+    <div class="stat">
+        <span>EMA25</span>
+        <b id="ema2"></b>
+    </div>
+
+    <div class="stat">
+        <span>ALMA10</span>
+        <b id="alma2"></b>
+    </div>
+
+    <div class="stat">
+        <span>MAD_FL</span>
+        <b id="mad2"></b>
+    </div>
+
+    <div class="stat">
+        <span>BB_SCORE</span>
+        <b id="bb2"></b>
+    </div>
+
+    <div class="stat">
+        <span>SCORE</span>
+        <b id="score2"></b>
+    </div>
+
+    <div class="stat">
+        <span>FINAL_SCORE</span>
+        <b id="final2"></b>
+    </div>
+
+</div>
+
+<div class="last-update">
+
+    Last Update :
+    <span id="update2"></span>
+
+</div>
+
+                
+
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
