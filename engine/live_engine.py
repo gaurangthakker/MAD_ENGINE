@@ -1,7 +1,11 @@
 import pandas as pd
+import requests
 
 from status_writer import write_signal
 from indicator_engine import calculate_indicators
+
+BOT_TOKEN = "8716806437:AAFWc5FOSOgwT6sdIEFZonnK5zypoLU4uMg"
+CHAT_ID = "6442905123"
 
 
 class LiveEngine:
@@ -11,7 +15,6 @@ class LiveEngine:
         self.symbol = symbol
 
         if df is None:
-
             self.df = pd.DataFrame(
                 columns=[
                     "datetime",
@@ -21,14 +24,25 @@ class LiveEngine:
                     "close",
                 ]
             )
-
         else:
-
             self.df = df.copy().reset_index(drop=True)
 
         self.last_signal = 0
 
         print(f"{self.symbol} : {len(self.df)} History Candles Loaded")
+
+    def send_telegram(self, message):
+        try:
+            requests.post(
+                f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+                json={
+                    "chat_id": CHAT_ID,
+                    "text": message
+                },
+                timeout=10
+            )
+        except Exception as e:
+            print("Telegram Error:", e)
 
     def process_candle(self, candle):
 
@@ -62,7 +76,6 @@ class LiveEngine:
 
             if signal == 1:
                 print(f"🚀 BUY SIGNAL ({self.symbol})")
-
             elif signal == -1:
                 print(f"🔻 SELL SIGNAL ({self.symbol})")
 
@@ -76,5 +89,24 @@ class LiveEngine:
             print(f"SCORE       : {int(last['SCORE'])}")
             print(f"FINAL_SCORE : {int(last['FINAL_SCORE'])}")
             print("==================================")
+
+            emoji = "🟢" if signal == 1 else "🔴"
+            text = "BUY" if signal == 1 else "SELL"
+
+            msg = (
+                f"🚀 MAD ENGINE ALERT\n\n"
+                f"{emoji} {text} SIGNAL\n\n"
+                f"Symbol : {self.symbol}\n"
+                f"Price  : {last['close']:.2f}\n\n"
+                f"EMA25  : {last['EMA25']:.2f}\n"
+                f"ALMA10 : {last['ALMA10']:.2f}\n"
+                f"MAD_FL : {int(last['MAD_FL'])}\n"
+                f"BB_SCORE : {int(last['BB_SCORE'])}\n"
+                f"SCORE : {int(last['SCORE'])}\n"
+                f"FINAL_SCORE : {int(last['FINAL_SCORE'])}\n\n"
+                f"Time : {last['datetime']}"
+            )
+
+            self.send_telegram(msg)
 
             self.last_signal = signal
